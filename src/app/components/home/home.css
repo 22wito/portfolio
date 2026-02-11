@@ -1,0 +1,162 @@
+.hero-section {
+  padding: 120px 0;
+  min-height: 90vh;
+  display: block; /* Volvemos a block para que Bootstrap maneje el grid */
+}
+
+.hero-intro {
+  color: var(--primary-color);
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-align: center; /* Aseguramos centrado */
+}
+
+.hero-name {
+  letter-spacing: -2px;
+  color: var(--text-color);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  color: var(--text-color) !important;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title {
+  color: var(--text-color) !important;
+  opacity: 0.8;
+}
+
+:root.dark .hero-title {
+  color: #cbd5e1 !important; /* Slate-300 para mejor lectura */
+  opacity: 1;
+}
+
+.tracking-widest {
+  letter-spacing: 0.3em;
+}
+
+.bio-extra {
+  background-color: var(--surface-color);
+  border-left: 4px solid var(--primary-color);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  width: 150px;
+  margin: 15px auto 0; /* Centrado manual como fallback */
+}
+
+.video-section {
+  padding: 100px 0;
+  width: 100%;
+  display: block; /* Asegura que se comporte como bloque */
+}
+
+.video-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  margin: 0 auto; /* Centrado extra */
+}
+
+.modern-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .video-controls {
+  opacity: 1;
+}
+
+.control-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.control-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  color: white;
+}
+}
+
+.control-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}

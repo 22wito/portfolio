@@ -1,59 +1,47 @@
-# Portfolio
+# Hugo Lozano Gallardo - Portfolio Personal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Este es el repositorio de mi portfolio profesional, desarrollado con **Angular 21** para mostrar mis proyectos, habilidades y trayectoria como desarrollador de aplicaciones web.
 
-## Development server
+## 🚀 Características Principales
 
-To start a local development server, run:
+- **Diseño Moderno y Responsivo**: Desarrollado con **Bootstrap 5** y CSS personalizado para una experiencia óptima en móviles y escritorio.
+- **Sistema de Temas (Light/Dark Mode)**: Incluye detección automática del tema del sistema y persistencia mediante `localStorage`.
+- **Arquitectura Limpia**: Uso de componentes Standalone y Signals (Angular 21) para un rendimiento superior.
+- **Formulario de Contacto**: Implementado con **Reactive Forms**, incluyendo validaciones en tiempo real y manejo de excepciones.
+- **Caching de Datos**: Implementación de almacenamiento local (`localStorage`) para la visualización de proyectos sin conexión.
 
-```bash
-ng serve
-```
+## 🛠️ Tecnologías Utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Frontend**: Angular 21, TypeScript, Bootstrap 5.
+- **Estilos**: Variables CSS, Modern CSS features, Purple Theme Palette.
+- **Herramientas**: Angular CLI, LocalStorage API, Reactive Forms.
 
-## Code scaffolding
+## 📁 Estructura del Proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `src/app/components`: Secciones principales (Home, Proyectos, Contacto, Nav, Footer).
+- `src/app/services`: Lógica de negocio (ThemeService para el modo oscuro y ProjectService para datos).
+- `src/app/models`: Interfaces y tipos de TypeScript para un tipado estricto.
+- `src/app/pipes`: Transformación de datos personalizada.
 
-```bash
-ng generate component component-name
-```
+## 💻 Instalación y Desarrollo
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/22wito/portfolio.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   ng serve
+   ```
+   Accede a `http://localhost:4200/` en tu navegador.
 
-```bash
-ng generate --help
-```
+## 👨‍💻 Sobre mí
 
-## Building
+Estudiante de Desarrollo de Aplicaciones Web apasionado por la **Inteligencia Artificial** y la **Automatización**. Mi enfoque actual está en el ecosistema de Angular y arquitecturas escalables.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+© 2026 - Desarrollado por [Hugo Lozano Gallardo](https://github.com/22wito)

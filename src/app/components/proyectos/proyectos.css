@@ -1,0 +1,46 @@
+.projects-section {
+  padding: 100px 0;
+}
+
+.title-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  width: 100px;
+  margin-top: 10px;
+}
+
+.project-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all var(--transition-speed);
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-title {
+  color: var(--text-color);
+  transition: color var(--transition-speed);
+}
+
+.project-card:hover .project-title {
+  color: var(--primary-color);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.badge {
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  font-size: 0.75rem;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}

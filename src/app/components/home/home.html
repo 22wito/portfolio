@@ -1,1 +1,62 @@
-<p>home works!</p>
+<section class="hero-section container py-5">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-10">
+      <p class="hero-intro mb-2">Hola, mi nombre es</p>
+      <h1 class="hero-name display-1 fw-bold mb-3 text-gradient">
+        HUGO LOZANO GALLARDO
+      </h1>
+      <h2 class="hero-title h3 text-muted mb-4 text-uppercase tracking-widest">
+        &lt; Software Developer /&gt;
+      </h2>
+
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+          <p class="hero-description lead">
+            Estudiante de Desarrollo de Aplicaciones Web apasionado por la
+            <span class="text-primary fw-medium">Inteligencia Artificial</span> y la
+            <span class="text-primary fw-medium">Automatización</span>.
+          </p>
+
+          <button class="btn btn-outline-primary mt-3" (click)="showBio = !showBio">
+            {{ showBio ? 'Ver menos' : 'Saber más sobre mí' }}
+          </button>
+
+          <div *ngIf="showBio" class="mt-4 bio-extra p-4 rounded shadow-sm">
+            <p>Me encanta aprender tecnologías emergentes y resolver problemas complejos mediante código limpio y eficiente. Actualmente enfocado en el ecosistema de Angular y arquitecturas escalables.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cta d-flex justify-content-center gap-3">
+        <a routerLink="/projects" class="btn btn-primary btn-lg px-4">Ver Proyectos</a>
+        <a routerLink="/contact" class="btn btn-outline-secondary btn-lg px-4">Contacto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="presentacion" class="video-section container py-5">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-10">
+      <div class="section-header mb-5">
+        <h2 class="section-title fw-bold">Presentación</h2>
+        <div class="title-line mx-auto"></div>
+      </div>
+
+      <div class="video-container d-flex justify-content-center w-100">
+        <div class="video-wrapper shadow-lg">
+          <video #videoPlayer preload poster="/preload.png" class="modern-video">
+            <source src="/presentacion.mp4" type="video/mp4">
+          </video>
+          <div class="video-controls">
+            <button class="control-btn" (click)="togglePlay(true)" title="Reproducir">Play</button>
+            <button class="control-btn" (click)="togglePlay(false)" title="Pausar">Pause</button>
+            <button class="control-btn" (click)="toggleMute()" title="Silenciar">
+              {{ isMuted ? 'Unmute' : 'Mute' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

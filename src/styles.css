@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles & Theme Variables */
+:root {
+  --transition-speed: 0.3s;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root.light {
+  --bg-color: #f8f7ff;
+  --text-color: #2d1b4e;
+  --primary-color: #6d28d9;
+  --secondary-color: #8b5cf6;
+  --accent-color: #c084fc;
+  --surface-color: #ffffff;
+  --border-color: #e5e7eb;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+
+:root.dark {
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+  --primary-color: #a78bfa;
+  --secondary-color: #8b5cf6;
+  --accent-color: #c084fc;
+  --surface-color: #1e293b;
+  --border-color: #334155;
+  --nav-bg: rgba(15, 23, 42, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  line-height: 1.6;
+}
+
+/* Modern minimalist scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.text-theme-visible {
+  color: var(--text-color) !important;
+  opacity: 1 !important;
+}
+
+/* Global Components */
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  font-family: inherit;
+}
+
+.btn-primary:hover {
+  background: rgba(109, 40, 217, 0.1);
+  box-shadow: 0 10px 20px rgba(109, 40, 217, 0.15);
+  transform: translateY(-2px);
+}

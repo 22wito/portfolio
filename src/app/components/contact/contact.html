@@ -1,1 +1,96 @@
-<p>contact works!</p>
+<section class="contact-section container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title fw-bold">Contacto</h2>
+        <div class="title-line mx-auto"></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center mb-5">
+          <h3 class="h2 mb-3 text-theme-visible">¡Hablemos!</h3>
+          <p class="text-theme-visible lead mb-4">Actualmente estoy disponible para nuevos proyectos y oportunidades laborales. Si tienes alguna duda o quieres saludar, escríbeme.</p>
+
+          <div class="d-flex justify-content-center gap-4 mb-5">
+            <a href="mailto:hugologa22@gmail.com" class="contact-icon-link text-primary" title="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="https://github.com/22wito" target="_blank" class="contact-icon-link text-primary" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/hugo-lozano-gallardo-698612338/" target="_blank" class="contact-icon-link text-primary" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-lg p-4 p-md-5 contact-card">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+              <div class="row g-3">
+                <!-- Nombre -->
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label small fw-bold text-uppercase">Nombre</label>
+                  <input type="text" id="name" formControlName="nombre" class="form-control form-control-lg"
+                         [ngClass]="{ 'is-invalid': isSubmitted && f['nombre'].errors }" placeholder="Tu nombre">
+                  <div *ngIf="isSubmitted && f['nombre'].errors" class="invalid-feedback">
+                    <div *ngIf="f['nombre'].errors['required']">El nombre es obligatorio</div>
+                    <div *ngIf="f['nombre'].errors['minlength']">Mínimo 3 caracteres</div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label small fw-bold text-uppercase">Email</label>
+                  <input type="email" id="email" formControlName="email" class="form-control form-control-lg"
+                         [ngClass]="{ 'is-invalid': isSubmitted && f['email'].errors }" placeholder="tu@email.com">
+                  <div *ngIf="isSubmitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">El email es obligatorio</div>
+                    <div *ngIf="f['email'].errors['email']">Formato de email inválido</div>
+                  </div>
+                </div>
+
+                <!-- Asunto (Requerido para completar Tema 15) -->
+                <div class="col-12 mb-3">
+                  <label for="subject" class="form-label small fw-bold text-uppercase">Asunto</label>
+                  <select id="subject" formControlName="asunto" class="form-select form-control-lg"
+                          [ngClass]="{ 'is-invalid': isSubmitted && f['asunto'].errors }">
+                    <option value="" disabled>Selecciona un asunto</option>
+                    <option value="trabajo">Propuesta de Trabajo</option>
+                    <option value="duda">Duda Técnica</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="col-12 mb-4">
+                  <label for="message" class="form-label small fw-bold text-uppercase">Mensaje</label>
+                  <textarea id="message" formControlName="mensaje" class="form-control form-control-lg" rows="5"
+                            [ngClass]="{ 'is-invalid': isSubmitted && f['mensaje'].errors }" placeholder="¿En qué puedo ayudarte?"></textarea>
+                  <div *ngIf="isSubmitted && f['mensaje'].errors" class="invalid-feedback">
+                    <div *ngIf="f['mensaje'].errors['required']">El mensaje no puede estar vacío</div>
+                    <div *ngIf="f['mensaje'].errors['minlength']">Mínimo 10 caracteres</div>
+                  </div>
+                </div>
+
+                <!-- Alertas de éxito/error -->
+                <div class="col-12 mb-3" *ngIf="submitSuccess">
+                  <div class="alert alert-success">¡Mensaje enviado con éxito! Me pondré en contacto pronto.</div>
+                </div>
+                <div class="col-12 mb-3" *ngIf="submitError">
+                  <div class="alert alert-danger">Hubo un error al enviar el mensaje. Inténtalo de nuevo.</div>
+                </div>
+
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-lg px-5 py-3 shadow" [disabled]="contactForm.invalid && isSubmitted">
+                    {{ isSubmitted && contactForm.valid ? 'Enviando...' : 'Enviar Mensaje' }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
