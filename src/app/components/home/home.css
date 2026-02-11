@@ -4,9 +4,29 @@
   display: block; /* Volvemos a block para que Bootstrap maneje el grid */
 }
 
+.profile-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  background-color: white; /* Para que el logo resalte si tiene transparencias */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--primary-color);
+}
+
 .hero-intro {
   color: var(--primary-color);
-  font-family: 'Fira Code', monospace;
+  font-family: var(--style-font);
   font-size: 1.1rem;
   letter-spacing: 1px;
   text-align: center; /* Aseguramos centrado */
@@ -22,15 +42,45 @@
 
 .hero-title {
   color: var(--text-color) !important;
+  font-family: var(--style-font);
   opacity: 0.8;
   text-align: center;
 }
 
 .hero-description {
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.25rem;
   text-align: center;
+}
+
+.bio-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  color: var(--text-color); /* Asegura color base */
+}
+
+.bio-card h3 {
+  color: var(--text-color);
+}
+
+.bio-card .text-muted {
+  color: var(--text-color) !important;
+  opacity: 0.8;
+}
+
+:root.dark .bio-card .text-muted {
+  color: #cbd5e1 !important; /* Color slate más legible en modo oscuro */
+}
+
+.bio-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.bg-surface {
+  background-color: var(--surface-color);
 }
 
 .text-gradient {
@@ -38,11 +88,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.hero-title {
-  color: var(--text-color) !important;
-  opacity: 0.8;
 }
 
 :root.dark .hero-title {
@@ -58,6 +103,7 @@
   background-color: var(--surface-color);
   border-left: 4px solid var(--primary-color);
   animation: slideDown 0.4s ease-out;
+  color: var(--text-color);
 }
 
 @keyframes slideDown {
@@ -143,7 +189,7 @@
   transform: translateY(-2px);
   color: white;
 }
-}
+
 
 .control-btn {
   background: none;

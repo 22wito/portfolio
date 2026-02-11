@@ -1,6 +1,25 @@
 .footer {
   background-color: var(--surface-color);
   color: var(--text-color) !important;
+  position: relative;
+}
+
+.footer-stamp {
+  position: absolute;
+  left: -80px;
+  bottom: -80px;
+  width: 450px;
+  height: 450px;
+  background-image: url('../../../../public/logo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+  transform: rotate(-15deg);
+  z-index: 0;
+  /* Máscara radial aún más suave y centrada para evitar bordes cuadrados */
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 60%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 60%);
 }
 
 .footer-logo {
@@ -8,6 +27,8 @@
   letter-spacing: 2px;
   font-size: 1.2rem;
   color: var(--text-color) !important;
+  position: relative;
+  z-index: 1;
 }
 
 .text-muted {

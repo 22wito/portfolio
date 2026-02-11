@@ -16,12 +16,12 @@ export class ProjectService {
     {
       name: 'KriterIA',
       description: 'Aplicación Web que ayuda en la elección de productos adaptados a las necesidades específicas de cada usuario, utilizando IA en todo el proceso.',
-      tools: ['Node.js', 'Express', 'Gemini API', 'React', 'MongoDB'],
+      tools: ['Node.js', 'Express', 'Groq API', 'React', 'MongoDB'],
       link: 'https://github.com/22wito'
     },
     {
       name: 'Home Lab Server',
-      description: 'Servidor casero con un portatil antiguo en el que se alojan varias aplicaciones personales.',
+      description: 'Servidor casero con una Raspberry Pi 5 en la que se alojan varias aplicaciones desarrolladas por y para mí.',
       tools: ['Linux']
     },
     {
@@ -33,7 +33,7 @@ export class ProjectService {
   ];
 
   constructor() {
-    // Almacenamiento en caché para cumplir Tema 14 (web storage)
+    
     this.cacheProjects();
   }
 

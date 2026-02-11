@@ -1,6 +1,9 @@
 <section class="hero-section container py-5">
   <div class="row justify-content-center text-center">
     <div class="col-lg-10">
+      <div class="profile-container mb-4">
+        <img src="logo.jpg" alt="Hugo Lozano" class="profile-img shadow-lg">
+      </div>
       <p class="hero-intro mb-2">Hola, mi nombre es</p>
       <h1 class="hero-name display-1 fw-bold mb-3 text-gradient">
         HUGO LOZANO GALLARDO
@@ -12,17 +15,29 @@
       <div class="row justify-content-center mb-5">
         <div class="col-md-8">
           <p class="hero-description lead">
-            Estudiante de Desarrollo de Aplicaciones Web apasionado por la
-            <span class="text-primary fw-medium">Inteligencia Artificial</span> y la
-            <span class="text-primary fw-medium">Automatización</span>.
+            Estudiante de <span class="text-primary fw-medium">Desarrollo de Aplicaciones Web</span> con una mente curiosa y polivalente. 
+            Me especializo en crear <span class="text-primary fw-medium">herramientas útiles</span> que automatizan procesos y resuelven problemas reales mediante <span class="text-primary fw-medium">IA</span>.
           </p>
 
-          <button class="btn btn-outline-primary mt-3" (click)="showBio = !showBio">
-            {{ showBio ? 'Ver menos' : 'Saber más sobre mí' }}
-          </button>
+          <div class="bio-container mt-5 text-start">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="bio-card h-100 p-4 rounded shadow-sm">
+                  <h3 class="h5 fw-bold mb-3"><i class="bi bi-cpu me-2"></i>Curiosidad sin límites</h3>
+                  <p class="text-muted small">No solo programo. Mi pasión por aprender me ha llevado a explorar el diseño 3D con Blender, la edición de video, la impresión 3D y la gestión de mis propios servidores domésticos.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="bio-card h-100 p-4 rounded shadow-sm">
+                  <h3 class="h5 fw-bold mb-3"><i class="bi bi-lightbulb me-2"></i>Soluciones Reales</h3>
+                  <p class="text-muted small">Me motiva ver cómo el código puede facilitar la vida cotidiana. Cada proyecto es un experimento personal y un reto técnico para encontrar la solución más eficiente.</p>
+                </div>
+              </div>
+            </div>
 
-          <div *ngIf="showBio" class="mt-4 bio-extra p-4 rounded shadow-sm">
-            <p>Me encanta aprender tecnologías emergentes y resolver problemas complejos mediante código limpio y eficiente. Actualmente enfocado en el ecosistema de Angular y arquitecturas escalables.</p>
+            <div class="mt-4 bio-extra p-4 rounded shadow-sm bg-surface">
+              <p class="mb-0">Como entusiasta del hardware y analista de mercado por afición, siempre busco el equilibrio perfecto entre rendimiento y utilidad, algo que intento reflejar en cada una de mis aplicaciones.</p>
+            </div>
           </div>
         </div>
       </div>

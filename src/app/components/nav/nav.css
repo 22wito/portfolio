@@ -15,14 +15,6 @@
   letter-spacing: 2px;
 }
 
-.logo-dot {
-  width: 10px;
-  height: 10px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--primary-color);
-}
-
 .nav-link {
   color: var(--text-color) !important;
   font-weight: 500;

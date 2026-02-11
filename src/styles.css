@@ -2,6 +2,7 @@
 :root {
   --transition-speed: 0.3s;
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --style-font: 'Inter', sans-serif; /* Fuente por defecto */
 }
 
 :root.light {
@@ -24,6 +25,14 @@
   --surface-color: #1e293b;
   --border-color: #334155;
   --nav-bg: rgba(15, 23, 42, 0.8);
+  --style-font: 'Fira Code', monospace; /* Solo cambia en modo oscuro */
+}
+
+/* Clase global para textos con estilo "developer" */
+.text-style {
+  font-family: var(--style-font);
+  letter-spacing: 0.5px;
+  font-variant-ligatures: contextual;
 }
 
 * {
@@ -38,6 +47,31 @@ body {
   font-family: var(--font-family);
   transition: background-color var(--transition-speed), color var(--transition-speed);
   line-height: 1.6;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  background-image: url('../public/logo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: -1;
+  /* Máscara radial para suavizar bordes en el fondo de las páginas */
+  mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+}
+
+:root.dark body::before {
+  opacity: 0.02; /* Aún más sutil en modo oscuro */
 }
 
 /* Modern minimalist scrollbar */

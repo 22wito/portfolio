@@ -38,7 +38,7 @@
 }
 
 .badge {
-  font-family: 'Fira Code', monospace;
+  font-family: var(--style-font);
   font-weight: 400;
   font-size: 0.75rem;
   background-color: var(--bg-color) !important;
