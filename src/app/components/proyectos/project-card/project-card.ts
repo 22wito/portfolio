@@ -32,19 +32,8 @@ import { ToolListPipe } from '../../../pipes/tool-list.pipe';
   `,
   styles: [`
     .project-card {
-      background: var(--surface-color);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border-color) !important;
       cursor: pointer;
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(109, 40, 217, 0.15) !important;
-      border-color: var(--primary-color) !important;
-    }
-    .text-theme-visible {
-      color: var(--text-color) !important;
-      opacity: 0.9;
+      height: 100%;
     }
     .badge {
       font-weight: 500;

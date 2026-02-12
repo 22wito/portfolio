@@ -1,47 +1,61 @@
 # Hugo Lozano Gallardo - Portfolio Personal
 
-Este es el repositorio de mi portfolio profesional, desarrollado con **Angular 21** para mostrar mis proyectos, habilidades y trayectoria como desarrollador de aplicaciones web.
+Repositorio del portfolio profesional de Hugo Lozano Gallardo. Una aplicación web moderna, rápida y estética diseñada para mostrar mi trayectoria como desarrollador, mis proyectos personales y mi pasión por la tecnología.
 
 ## 🚀 Características Principales
 
-- **Diseño Moderno y Responsivo**: Desarrollado con **Bootstrap 5** y CSS personalizado para una experiencia óptima en móviles y escritorio.
-- **Sistema de Temas (Light/Dark Mode)**: Incluye detección automática del tema del sistema y persistencia mediante `localStorage`.
-- **Arquitectura Limpia**: Uso de componentes Standalone y Signals (Angular 21) para un rendimiento superior.
-- **Formulario de Contacto**: Implementado con **Reactive Forms**, incluyendo validaciones en tiempo real y manejo de excepciones.
-- **Caching de Datos**: Implementación de almacenamiento local (`localStorage`) para la visualización de proyectos sin conexión.
+- **Experiencia Fluida (Smooth UX)**: Transiciones suaves y consolidadas en toda la aplicación, incluyendo cambios de color, interacciones con botones y navegación.
+- **Doble Tema Inteligente (Light/Dark Mode)**: Sistema de cambio de tema con persistencia en `localStorage`, detección automática de preferencias del sistema y corrección de contraste para accesibilidad.
+- **Arquitectura de Última Generación**: Desarrollado con **Angular** (Componentes Standalone y Signals) para una reactividad eficiente y un código limpio.
+- **Formulario de Contacto Avanzado**: Integración completa de **Reactive Forms** con validaciones personalizadas, estados de carga y estilos dinámicos que se adaptan al tema visual.
+- **Gestión de Proyectos**: Despliegue dinámico de proyectos mediante servicios dedicados y componentes reutilizables.
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías y Herramientas
 
-- **Frontend**: Angular 21, TypeScript, Bootstrap 5.
-- **Estilos**: Variables CSS, Modern CSS features, Purple Theme Palette.
-- **Herramientas**: Angular CLI, LocalStorage API, Reactive Forms.
+- **Core**: [Angular](https://angular.dev/) (v17+), TypeScript.
+- **UI/UX**: [Bootstrap 5](https://getbootstrap.com/), CSS3 Custom Properties (Variables), Animaciones personalizadas.
+- **Lógica**: Reactive Forms, Signals, Services (Singleton Pattern).
+- **Desarrollo**: Angular CLI, VS Code.
+
+## 🎨 Estética y Diseño
+
+El proyecto utiliza una paleta de colores basada en tonos púrpura y violeta, seleccionada para transmitir creatividad y profesionalismo. Se ha puesto especial énfasis en:
+- **Consolidación de estilos**: Una única "plantilla general" global que asegura que todos los botones, tarjetas y campos de texto se vean y se sientan iguales.
+- **Modo Oscuro Corregido**: Estilos específicos para componentes complejos como desplegables y sombras, asegurando que no haya "roces" visuales.
 
 ## 📁 Estructura del Proyecto
 
-- `src/app/components`: Secciones principales (Home, Proyectos, Contacto, Nav, Footer).
-- `src/app/services`: Lógica de negocio (ThemeService para el modo oscuro y ProjectService para datos).
-- `src/app/models`: Interfaces y tipos de TypeScript para un tipado estricto.
-- `src/app/pipes`: Transformación de datos personalizada.
+```
+src/
+├── app/
+│   ├── components/  # Home, Proyectos, Contacto, Nav, Footer
+│   ├── services/    # ThemeService, ProjectService
+│   ├── models/      # Interfaces (Project model)
+│   ├── pipes/       # ToolListPipe para filtrado/formato
+│   └── app.routes.ts # Sistema de rutas SPA
+├── assets/          # Imágenes y recursos locales
+└── styles.css       # Plantilla de estilos globales y temas
+```
 
 ## 💻 Instalación y Desarrollo
 
-1. Clona el repositorio:
+1. **Clonar repositorio:**
    ```bash
    git clone https://github.com/22wito/portfolio.git
    ```
-2. Instala las dependencias:
+2. **Instalar dependencias:**
    ```bash
    npm install
    ```
-3. Inicia el servidor de desarrollo:
+3. **Servidor local:**
    ```bash
    ng serve
    ```
-   Accede a `http://localhost:4200/` en tu navegador.
+   Accede a `http://localhost:4200/`.
 
 ## 👨‍💻 Sobre mí
 
-Estudiante de Desarrollo de Aplicaciones Web apasionado por la **Inteligencia Artificial** y la **Automatización**. Mi enfoque actual está en el ecosistema de Angular y arquitecturas escalables.
+Desarrollador enfocado en buscar soluciones reales mediante la **Inteligencia Artificial** y la **Automatización**. Mi objetivo es crear herramientas que faciliten la vida cotidiana, aplicando un equilibrio perfecto entre rendimiento técnico y utilidad práctica.
 
 ---
-© 2026 - Desarrollado por [Hugo Lozano Gallardo](https://github.com/22wito)
+© 2026 - Hugo Lozano Gallardo

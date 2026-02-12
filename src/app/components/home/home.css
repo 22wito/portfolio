@@ -42,7 +42,6 @@
 
 .hero-title {
   color: var(--text-color) !important;
-  font-family: var(--style-font);
   opacity: 0.8;
   text-align: center;
 }
@@ -55,32 +54,22 @@
 }
 
 .bio-card {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-color);
   transition: all 0.3s ease;
-  color: var(--text-color); /* Asegura color base */
 }
 
-.bio-card h3 {
-  color: var(--text-color);
-}
-
-.bio-card .text-muted {
-  color: var(--text-color) !important;
-  opacity: 0.8;
-}
-
-:root.dark .bio-card .text-muted {
-  color: #cbd5e1 !important; /* Color slate más legible en modo oscuro */
+.bio-card {
+  background-color: var(--surface-color) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.3s ease;
 }
 
 .bio-card:hover {
-  border-color: var(--primary-color);
+  border-color: var(--primary-color) !important;
   transform: translateY(-5px);
 }
 
 .bg-surface {
-  background-color: var(--surface-color);
+  background-color: var(--surface-color) !important;
 }
 
 .text-gradient {
@@ -90,32 +79,18 @@
   background-clip: text;
 }
 
-:root.dark .hero-title {
-  color: #cbd5e1 !important; /* Slate-300 para mejor lectura */
-  opacity: 1;
-}
-
 .tracking-widest {
   letter-spacing: 0.3em;
 }
 
 .bio-extra {
-  background-color: var(--surface-color);
   border-left: 4px solid var(--primary-color);
   animation: slideDown 0.4s ease-out;
-  color: var(--text-color);
 }
 
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.title-line {
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-  width: 150px;
-  margin: 15px auto 0; /* Centrado manual como fallback */
 }
 
 .video-section {
@@ -130,6 +105,27 @@
   align-items: center;
   width: 100%;
   margin: 0 auto;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.hero-cta .btn-hero {
+  border-radius: 12px !important;
+  padding: 12px 32px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-align: center !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-width: 2px !important;
+  min-width: 180px;
+  text-decoration: none !important;
+}
+
+.hero-cta .btn-hero:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 15px rgba(109, 40, 217, 0.25) !important;
 }
 
 .video-wrapper {

@@ -25,7 +25,7 @@
   --surface-color: #1e293b;
   --border-color: #334155;
   --nav-bg: rgba(15, 23, 42, 0.8);
-  --style-font: 'Fira Code', monospace; /* Solo cambia en modo oscuro */
+  --style-font: 'Inter', sans-serif; /* Mantenemos la misma fuente para consistencia */
 }
 
 /* Clase global para textos con estilo "developer" */
@@ -39,13 +39,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease, 
+              border-color var(--transition-speed) ease,
+              fill var(--transition-speed) ease,
+              stroke var(--transition-speed) ease;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-family);
-  transition: background-color var(--transition-speed), color var(--transition-speed);
   line-height: 1.6;
   position: relative;
 }
@@ -75,21 +79,60 @@ body::before {
 }
 
 /* Modern minimalist scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-color);
+  transition: scrollbar-color var(--transition-speed) ease;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
+  transition: background-color var(--transition-speed) ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
   border-radius: 10px;
+  border: 2px solid var(--bg-color); /* Separación para que se vea más limpio */
+  transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary-color);
+}
+
+/* Global Typography & Elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.title-line {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  width: 60px;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.text-muted {
+  color: var(--text-color) !important;
+  opacity: 0.6 !important;
 }
 
 .text-theme-visible {
@@ -98,6 +141,114 @@ body::before {
 }
 
 /* Global Components */
+.btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  transition: all var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.2);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-color) !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+  background: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--surface-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  transform: translateY(-3px);
+}
+
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.project-card {
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 15px 30px rgba(109, 40, 217, 0.15);
+}
+
+.form-control, .form-select {
+  background-color: var(--surface-color) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color) !important;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-speed) ease !important;
+}
+
+.form-select {
+  color: var(--text-color) !important;
+}
+
+/* Para que el placeholder del select (opción desactivada) coincida con los inputs */
+.form-select option:first-child {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.form-select option {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+}
+
+.form-select:disabled {
+  opacity: 0.6;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.25rem rgba(109, 40, 217, 0.2) !important;
+  background-color: var(--surface-color) !important;
+  color: var(--text-color) !important;
+  outline: none;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236d28d9' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
+:root.dark .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a78bfa' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
 .btn-primary {
   display: inline-block;
   padding: 0.8rem 2rem;
