@@ -24,7 +24,7 @@ import { ToolListPipe } from '../../../pipes/tool-list.pipe';
 
         @if (project.link) {
           <a [href]="project.link" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4" (click)="$event.stopPropagation()">
-            Ver Proyecto <i class="bi bi-arrow-right ms-1"></i>
+            Proyecto <i class="bi bi-arrow-right ms-1"></i>
           </a>
         }
       </div>
