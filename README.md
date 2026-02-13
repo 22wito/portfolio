@@ -4,9 +4,9 @@ Repositorio del portfolio profesional de Hugo Lozano Gallardo. Una aplicación w
 
 ## 🚀 Características Principales
 
-- **Experiencia Fluida (Smooth UX)**: Transiciones suaves y consolidadas en toda la aplicación, incluyendo cambios de color, interacciones con botones y navegación.
-- **Doble Tema Inteligente (Light/Dark Mode)**: Sistema de cambio de tema con persistencia en `localStorage`, detección automática de preferencias del sistema y corrección de contraste para accesibilidad.
-- **Arquitectura de Última Generación**: Desarrollado con **Angular** (Componentes Standalone y Signals) para una reactividad eficiente y un código limpio.
+- **Experiencia Fluida**: Transiciones suaves y consolidadas en toda la aplicación, incluyendo cambios de color, interacciones con botones y navegación.
+- **Doble Tema Inteligente (Modo claro y oscuro)**: Sistema de cambio de tema con persistencia en `localStorage`, detección automática de preferencias del sistema.
+- **Arquitectura Angular**: Desarrollado con **Angular** (Componentes Standalone y Signals) para una reactividad eficiente y un código limpio.
 - **Formulario de Contacto Avanzado**: Integración completa de **Reactive Forms** con validaciones personalizadas, estados de carga y estilos dinámicos que se adaptan al tema visual.
 - **Gestión de Proyectos**: Despliegue dinámico de proyectos mediante servicios dedicados y componentes reutilizables.
 
